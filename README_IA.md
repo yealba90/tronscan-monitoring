@@ -4,7 +4,7 @@
  Con la ayuda de ChatGPT, se solicito un plan detallado de estructura para iniciar el pipeline. Manualmente se realiza la creación de carpetas y archivos requereridos.
 
 ## Commit 2: Extract
-En esta primera fase del reto se construyó, con apoyo de herramientas de IA, el módulo de extracción de transacciones de wallets TRON desde la API pública de TronScan.
+Se construyó, con apoyo de herramientas de IA, el módulo de extracción de transacciones de wallets TRON desde la API pública de TronScan.
 Diseño del plan:
 Utilicé ChatGPT para que me ayudara a desglosar la Fase 1 en pasos claros (analizar endpoint TronScan, crear cliente Python, cargar wallets desde YAML, probar en main.py, añadir logging). Esto me permitió arrancar con una estructura ordenada.
 Generación de código base:
@@ -31,3 +31,23 @@ Se definió un esquema estructurado para las transacciones mediante un modelo Tr
 Se implementó la función parse_transaction que transforma los datos crudos extraídos en objetos validados.
 Se probó la transformación integrándola en main.py, mostrando ejemplos de transacciones ya normalizadas y guardándolas opcionalmente en out/structured/ para depuración.
 
+## Commit 4: Load
+Se implementó el módulo de carga de datos transformados hacia Snowflake. Se buscó persistir en una base de datos las transacciones extraídas y normalizadas en las fases anteriores.
+
+Se configuró un entorno Python 3.11 compatible con snowflake-connector-python y se añadieron las credenciales de Snowflake en un archivo .env seguro.
+
+Se desarrolló la clase SnowflakeLoader en src/load/snowflake_loader.py:
+Establece la conexión con Snowflake usando las credenciales.
+Ejecuta USE DATABASE y USE SCHEMA para fijar el contexto.
+Crea automáticamente la tabla TRANSACTIONS si no existe, con las columnas:
+* TX_ID (STRING, clave primaria)
+* TIMESTAMP_UTC (TIMESTAMP_TZ)
+* FROM_ADDRESS (STRING)
+* TO_ADDRESS (STRING/NULLABLE)
+* TOKEN (STRING)
+* AMOUNT (NUMBER(38,8))
+* OBSERVED_WALLET (STRING)
+* RAW (VARIANT con el JSON original)
+Inserta cada transacción fila por fila usando PARSE_JSON para la columna RAW, garantizando compatibilidad y evitando errores de multi-row insert.
+Se actualizó main.py para que, después de extraer y transformar con parse_transaction, llame a loader.insert_transactions(structured_transactions) y cargue los datos en Snowflake.
+Se ajustó el modelo Transaction para permitir valores NULL en campos opcionales como to_address, evitando fallos de validación.
