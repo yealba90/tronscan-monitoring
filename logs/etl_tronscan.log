@@ -1,0 +1,164 @@
+2025-10-05 15:27:39,712 [INFO] Servicio ETL TronScan iniciado (ejecuci�n cada 15 min)...
+2025-10-05 15:27:39,712 [INFO] === Iniciando ciclo ETL TronScan ===
+2025-10-05 15:27:40,211 [INFO] Snowflake Connector for Python Version: 3.17.4, Python Version: 3.11.13, Platform: Windows-10-10.0.26100-SP0
+2025-10-05 15:27:40,212 [INFO] Connecting to GLOBAL Snowflake domain
+2025-10-05 15:27:45,037 [INFO] Iniciando extracci�n de transacciones para wallet TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 15:27:45,512 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 15:27:45,550 [INFO] Datos crudos guardados en: None
+2025-10-05 15:27:45,603 [INFO] Datos estructurados guardados en: None
+2025-10-05 15:28:11,821 [INFO] Datos cargados exitosamente en Snowflake para TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 15:28:11,821 [INFO] Iniciando extracci�n de transacciones para wallet TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 15:28:12,226 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 15:28:12,268 [INFO] Datos crudos guardados en: None
+2025-10-05 15:28:12,324 [INFO] Datos estructurados guardados en: None
+2025-10-05 15:48:27,267 [INFO] \U0001f552 Servicio ETL TronScan iniciado (ejecuci�n cada 15 min)...
+2025-10-05 15:48:27,267 [INFO] === \U0001f680 Iniciando ciclo ETL TronScan ===
+2025-10-05 15:48:27,719 [INFO] Snowflake Connector for Python Version: 3.17.4, Python Version: 3.11.13, Platform: Windows-10-10.0.26100-SP0
+2025-10-05 15:48:27,719 [INFO] Connecting to GLOBAL Snowflake domain
+2025-10-05 15:48:32,027 [INFO] Iniciando extracci�n de transacciones para wallet TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 15:48:32,577 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 15:48:32,617 [INFO] Datos crudos guardados en: None
+2025-10-05 15:48:32,657 [INFO] Datos estructurados guardados en: None
+2025-10-05 15:49:00,137 [INFO] Datos cargados exitosamente en Snowflake para TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 15:49:00,137 [INFO] Iniciando extracci�n de transacciones para wallet TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 15:49:00,687 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 15:49:00,737 [INFO] Datos crudos guardados en: None
+2025-10-05 15:49:00,787 [INFO] Datos estructurados guardados en: None
+2025-10-05 15:49:25,826 [INFO] Datos cargados exitosamente en Snowflake para TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 15:49:25,826 [INFO] Iniciando extracci�n de transacciones para wallet TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 15:49:26,598 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 15:49:26,629 [INFO] Datos crudos guardados en: None
+2025-10-05 15:49:26,643 [INFO] Datos estructurados guardados en: None
+2025-10-05 15:49:52,466 [INFO] Datos cargados exitosamente en Snowflake para TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 15:49:52,466 [INFO] Iniciando extracci�n de transacciones para wallet TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 15:49:52,921 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 15:49:52,947 [INFO] Datos crudos guardados en: None
+2025-10-05 15:49:52,997 [INFO] Datos estructurados guardados en: None
+2025-10-05 15:50:19,498 [INFO] Datos cargados exitosamente en Snowflake para TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 15:50:19,498 [INFO] Snowflake Connector for Python Version: 3.17.4, Python Version: 3.11.13, Platform: Windows-10-10.0.26100-SP0
+2025-10-05 15:50:19,498 [ERROR] \u26a0\ufe0f No se pudo ejecutar la Task en Snowflake: 'NoneType' object has no attribute 'find'
+2025-10-05 15:50:19,498 [INFO] \u2705 ETL completado correctamente en 112.23 segundos.
+
+2025-10-05 16:06:51,615 [INFO] \U0001f552 Servicio ETL TronScan iniciado (ejecuci�n cada 15 min)...
+2025-10-05 16:06:51,615 [INFO] === \U0001f680 Iniciando ciclo ETL TronScan ===
+2025-10-05 16:06:52,201 [INFO] Snowflake Connector for Python Version: 3.17.4, Python Version: 3.11.13, Platform: Windows-10-10.0.26100-SP0
+2025-10-05 16:06:52,201 [INFO] Connecting to GLOBAL Snowflake domain
+2025-10-05 16:06:56,503 [INFO] Iniciando extracci�n de transacciones para wallet TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:06:56,967 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 16:06:56,973 [INFO] Datos crudos guardados en: None
+2025-10-05 16:06:56,983 [INFO] Datos estructurados guardados en: None
+2025-10-05 16:07:24,834 [INFO] Datos cargados exitosamente en Snowflake para TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:07:24,834 [INFO] Iniciando extracci�n de transacciones para wallet TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:07:25,202 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 16:07:25,232 [INFO] Datos crudos guardados en: None
+2025-10-05 16:07:25,264 [INFO] Datos estructurados guardados en: None
+2025-10-05 16:07:50,702 [INFO] Datos cargados exitosamente en Snowflake para TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:07:50,702 [INFO] Iniciando extracci�n de transacciones para wallet TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:07:51,549 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 16:07:51,571 [INFO] Datos crudos guardados en: None
+2025-10-05 16:07:51,602 [INFO] Datos estructurados guardados en: None
+2025-10-05 16:08:19,336 [INFO] Datos cargados exitosamente en Snowflake para TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:08:19,336 [INFO] Iniciando extracci�n de transacciones para wallet TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:08:19,827 [INFO] HTTP Request: GET https://apilist.tronscan.org/api/transaction?address=TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu&limit=50&start=0 "HTTP/1.1 200 OK"
+2025-10-05 16:08:19,847 [INFO] Datos crudos guardados en: None
+2025-10-05 16:08:19,865 [INFO] Datos estructurados guardados en: None
+2025-10-05 16:08:46,446 [INFO] Datos cargados exitosamente en Snowflake para TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:08:46,451 [ERROR] \u26a0\ufe0f No se pudo ejecutar la Task en Snowflake: name 'load_dotenv' is not defined
+2025-10-05 16:08:46,451 [INFO] \u2705 ETL completado correctamente en 114.84 segundos.
+
+2025-10-05 16:37:10,703 [INFO] 🕒 Servicio ETL TronScan iniciado (ejecución cada 15 min)...
+2025-10-05 16:37:16,286 [INFO] 📥 Iniciando extracción de transacciones para wallet TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:37:16,868 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:37:16,913 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:37:17,513 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:37:17,513 [INFO] 📥 Iniciando extracción de transacciones para wallet TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:37:17,663 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:37:17,697 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:37:18,356 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:37:18,356 [INFO] 📥 Iniciando extracción de transacciones para wallet TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:37:18,553 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:37:18,583 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:37:19,033 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:37:19,038 [INFO] 📥 Iniciando extracción de transacciones para wallet TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:37:19,198 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:37:19,220 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:37:19,887 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:37:20,077 [INFO] ✅ ETL completado correctamente en 9.37 segundos.
+
+2025-10-05 16:40:45,102 [INFO] 🕒 Servicio ETL TronScan iniciado (ejecución cada 15 min)...
+2025-10-05 16:40:49,912 [INFO] 📥 Iniciando extracción de transacciones para wallet TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:40:50,410 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:40:50,448 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:40:50,644 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:40:50,644 [INFO] 📥 Iniciando extracción de transacciones para wallet TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:40:50,806 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:40:50,846 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:40:51,022 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:40:51,022 [INFO] 📥 Iniciando extracción de transacciones para wallet TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:40:51,192 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:40:51,223 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:40:51,428 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:40:51,428 [INFO] 📥 Iniciando extracción de transacciones para wallet TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:40:51,578 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:40:51,592 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:40:51,732 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:40:51,872 [INFO] ✅ ETL completado correctamente en 6.77 segundos.
+
+2025-10-05 16:44:36,394 [INFO] 🕒 Servicio ETL TronScan iniciado (ejecución cada 15 min)...
+2025-10-05 16:44:41,548 [INFO] 📥 Iniciando extracción de transacciones para wallet TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:44:42,141 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:44:42,189 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:44:42,392 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:44:42,392 [INFO] 📥 Iniciando extracción de transacciones para wallet TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:44:42,576 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:44:42,616 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:44:42,794 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:44:42,794 [INFO] 📥 Iniciando extracción de transacciones para wallet TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:44:43,151 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:44:43,181 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:44:43,361 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:44:43,361 [INFO] 📥 Iniciando extracción de transacciones para wallet TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:44:43,497 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:44:43,525 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:44:43,731 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:44:43,911 [INFO] ✅ ETL completado correctamente en 7.52 segundos.
+
+2025-10-05 16:48:11,270 [INFO] 🕒 Servicio ETL TronScan iniciado (ejecución cada 15 min)...
+2025-10-05 16:48:15,860 [INFO] 📥 Iniciando extracción de transacciones para wallet TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:48:16,616 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:48:16,625 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:48:16,789 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:48:16,797 [INFO] 📥 Iniciando extracción de transacciones para wallet TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:48:16,920 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:48:16,930 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:48:17,240 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:48:17,249 [INFO] 📥 Iniciando extracción de transacciones para wallet TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:48:17,520 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:48:17,537 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:48:17,699 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:48:17,699 [INFO] 📥 Iniciando extracción de transacciones para wallet TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:48:17,840 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:48:17,860 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:48:18,080 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TFTWNgDBkQ5wQoP8RXpRznnHvAVV8x5jLu
+2025-10-05 16:48:18,255 [INFO] ✅ ETL completado correctamente en 6.99 segundos.
+
+2025-10-05 16:51:09,409 [INFO] 🕒 Servicio ETL TronScan iniciado (ejecución cada 15 min)...
+2025-10-05 16:51:14,235 [INFO] 📥 Iniciando extracción de transacciones para wallet TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:51:14,660 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:51:14,673 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:51:22,281 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:51:22,281 [INFO] 📥 Iniciando extracción de transacciones para wallet TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:51:22,800 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:51:22,820 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:53:30,948 [INFO] 🕒 Servicio ETL TronScan iniciado (ejecución cada 15 min)...
+2025-10-05 16:53:35,948 [INFO] 📥 Iniciando extracción de transacciones para wallet TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:53:36,548 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:53:36,578 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:54:06,107 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TNPdqto8HiuMzoG7Vv9wyyYhWzCojLeHAF
+2025-10-05 16:54:06,108 [INFO] 📥 Iniciando extracción de transacciones para wallet TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:54:06,452 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:54:06,483 [INFO] 📄 Datos estructurados guardados en: None
+2025-10-05 16:54:36,383 [INFO] ⬆️ Datos cargados exitosamente en Snowflake para TU4vEruvZwLLkSfV9bNw12EJTPvNr7Pvaa
+2025-10-05 16:54:36,384 [INFO] 📥 Iniciando extracción de transacciones para wallet TWpqsYjAw7rFPmWeZcwKQanCS6Kk8f5dhT
+2025-10-05 16:54:36,862 [INFO] 💾 Datos crudos guardados en: None
+2025-10-05 16:54:36,868 [INFO] 📄 Datos estructurados guardados en: None

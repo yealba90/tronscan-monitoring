@@ -1,0 +1,21 @@
+-- ===============================================================
+-- VISTA DE MÉTRICAS: WALLET_METRICS_VIEW
+-- Descripción: Resume la actividad de cada wallet monitoreada
+-- Autor: Yeison Álvarez
+-- ===============================================================
+
+USE ROLE ACCOUNTADMIN;
+USE WAREHOUSE COMPUTE_TRON_WH;
+USE DATABASE TRON_SCAN_MONITORING;
+USE SCHEMA TRANSACTIONS;
+
+CREATE OR REPLACE VIEW WALLET_METRICS_VIEW AS
+SELECT
+    OBSERVED_WALLET,
+    TOTAL_TX,
+    TOKENS_UNICOS,
+    ULTIMA_TX,
+    MONTO_TOTAL,
+    DATEDIFF('minute', ULTIMA_TX, CURRENT_TIMESTAMP()) AS MINUTOS_DESDE_ULTIMA_TX
+FROM WALLET_METRICS
+ORDER BY ULTIMA_TX DESC;
