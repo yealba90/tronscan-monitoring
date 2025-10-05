@@ -1,8 +1,9 @@
 # AI USAGE LOG
 
-Commit 1: Estructura inicial del proyecto. Con la ayuda de ChatGPT, se solicito un plan detallado de estructura para iniciar el pipeline. Manualmente se realiza la creación de carpetas y archivos requereridos.
+## Commit 1: Estructura inicial del proyecto.
+ Con la ayuda de ChatGPT, se solicito un plan detallado de estructura para iniciar el pipeline. Manualmente se realiza la creación de carpetas y archivos requereridos.
 
-Commit 2: Extract
+## Commit 2: Extract
 En esta primera fase del reto se construyó, con apoyo de herramientas de IA, el módulo de extracción de transacciones de wallets TRON desde la API pública de TronScan.
 Diseño del plan:
 Utilicé ChatGPT para que me ayudara a desglosar la Fase 1 en pasos claros (analizar endpoint TronScan, crear cliente Python, cargar wallets desde YAML, probar en main.py, añadir logging). Esto me permitió arrancar con una estructura ordenada.
@@ -24,4 +25,9 @@ Con los ejemplos sugeridos por IA ejecuté python -m src.main desde la raíz del
 
 Valor del uso de IA:
 Me ayudó a acelerar la creación de la estructura inicial del repositorio, a redactar código base robusto y a tener buenas prácticas (módulos separados, logging, YAML de configuración) desde el primer paso.
+
+## Commit 3: Transform
+Se definió un esquema estructurado para las transacciones mediante un modelo Transaction en Pydantic, que garantiza tipos consistentes (timestamp UTC, amount como Decimal, campos normalizados).
+Se implementó la función parse_transaction que transforma los datos crudos extraídos en objetos validados.
+Se probó la transformación integrándola en main.py, mostrando ejemplos de transacciones ya normalizadas y guardándolas opcionalmente en out/structured/ para depuración.
 

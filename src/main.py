@@ -1,6 +1,12 @@
 from src.extract.tronscan_client import TronScanClient
 from src.config.config_loader import load_wallets
 from src.extract.raw_saver import save_raw
+
+from src.transform.transformer import parse_transaction
+from src.transform.models import Transaction
+
+from src.transform.save_structured import save_structured
+
 import logging
 
 logging.basicConfig(
@@ -21,6 +27,15 @@ def main():
         if txs:
             save_raw(wallet, txs)
             log.info(f"Datos crudos guardados para wallet {wallet}")
+
+            structured_transactions = [parse_transaction(tx, wallet) for tx in txs]
+            log.info(f"Transacción estructurada:\n{structured_transactions[0].dict()}") 
+
+            save_structured(wallet, structured_transactions)
+            log.info(f"Datos estructurados guardados para wallet {wallet}")
+
+
+
     client.close()
     log.info("Proceso de extracción finalizado")
 
