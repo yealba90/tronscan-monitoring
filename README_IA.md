@@ -132,3 +132,5 @@ Se validó la consistencia entre los datos locales (out/structured/) y los almac
     F --> G[Tabla ALERT_LOGS]
     G -->|Consulta| H[Snowsight / Dashboard / Alertas]
 ```
+## Commit 5: alert rules (Transaction Count y Volume)
+
