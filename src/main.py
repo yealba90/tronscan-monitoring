@@ -4,7 +4,7 @@ import logging
 import schedule
 from dotenv import load_dotenv
 from datetime import datetime
-
+from src.alerts.alert_exporter import export_alerts_to_json
 from src.extract.tronscan_client import TronScanClient
 from src.config.config_loader import load_wallets
 from src.extract.raw_saver import save_raw
@@ -81,6 +81,12 @@ def etl_job():
 
         # Ejecutar task en Snowflake al final del ciclo
         loader.run_task("REFRESH_WALLET_METRICS")
+
+        try:
+            export_alerts_to_json()
+            logger.info("📤 Alertas exportadas correctamente a archivo JSON.")
+        except Exception as e:
+            logger.error(f"⚠️ Error al exportar alertas a JSON: {e}")
 
         elapsed = (datetime.utcnow() - start_time).total_seconds()
         logger.info(f"✅ ETL completado correctamente en {elapsed:.2f} segundos.\n")

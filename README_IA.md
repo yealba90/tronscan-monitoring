@@ -133,4 +133,75 @@ Se validó la consistencia entre los datos locales (out/structured/) y los almac
     G -->|Consulta| H[Snowsight / Dashboard / Alertas]
 ```
 ## Commit 5: alert rules (Transaction Count y Volume)
+Se implementa la **lógica de detección de comportamientos anómalos** mediante reglas de negocio directamente en **Snowflake**, con el objetivo de generar alertas cuando las wallets superen umbrales definidos de actividad o volumen transaccionado.
+
+---
+
+### Objetivo
+
+Detectar de forma automática patrones de comportamiento inusuales en las wallets monitoreadas:
+
+- **Transaction Count Rule** → cuando una wallet realiza más de *N* transacciones en una ventana de tiempo.  
+- **Transaction Volume Rule** → cuando una wallet transfiere más de *X* unidades de valor en una ventana determinada.  
+
+Ambas reglas se ejecutan de forma recurrente mediante **Snowflake Tasks**, generando alertas que posteriormente son exportadas a JSON en la Fase 5.
+
+---
+
+### Estructura implementada
+
+Se añadieron tres componentes principales dentro del esquema `TRANSACTIONS`:
+
+| Componente | Descripción |
+|-------------|-------------|
+| **`ALERT_THRESHOLDS`** | Tabla de parámetros que define los umbrales por regla y periodo (7 y 30 días). |
+| **`CHECK_WALLET_RULES()`** | Procedimiento que evalúa ambas reglas y registra las alertas detectadas. |
+| **`CHECK_WALLET_RULES_TASK`** | Task automática que ejecuta el procedimiento cada 15 minutos. |
+
+---
+
+### Tabla de umbrales configurables
+
+Permite ajustar los valores de alerta sin modificar el código del procedimiento:
+
+```sql
+CREATE OR REPLACE TABLE ALERT_THRESHOLDS (
+    RULE_NAME STRING PRIMARY KEY,
+    PERIOD_DAYS INT,
+    THRESHOLD FLOAT
+);
+
+INSERT INTO ALERT_THRESHOLDS VALUES
+  ('Transaction Count Rule - 7d', 7, 100),
+  ('Transaction Count Rule - 30d', 30, 300),
+  ('Transaction Volume Rule - 7d', 7, 500000),
+  ('Transaction Volume Rule - 30d', 30, 2000000);
+```
+
+### Procedimiento CHECK_WALLET_RULES()
+Evalúa los datos en la tabla TRANSACTIONS y registra las alertas que superen los límites establecidos:
+```sql
+CREATE OR REPLACE TABLE ALERT_THRESHOLDS (
+    RULE_NAME STRING PRIMARY KEY,
+    PERIOD_DAYS INT,
+    THRESHOLD FLOAT
+);
+
+INSERT INTO ALERT_THRESHOLDS VALUES
+  ('Transaction Count Rule - 7d', 7, 100),
+  ('Transaction Count Rule - 30d', 30, 300),
+  ('Transaction Volume Rule - 7d', 7, 500000),
+  ('Transaction Volume Rule - 30d', 30, 2000000);
+```
+### Task de ejecución periódica
+Esta tarea se encarga de lanzar las reglas cada 15 minutos:}
+```sql
+CREATE OR REPLACE TASK CHECK_WALLET_RULES_TASK
+  WAREHOUSE = COMPUTE_TRON_WH
+  SCHEDULE = '15 MINUTE'
+AS
+  CALL CHECK_WALLET_RULES();
+```
+
+## Commit 6: alert JSON
 
