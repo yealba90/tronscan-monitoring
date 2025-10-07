@@ -1,9 +1,10 @@
 -- ===============================================================
--- TASK PRINCIPAL: REFRESH_WALLET_METRICS
--- Descripción: Ejecuta cada 15 minutos una actualización de métricas
--- Autor: Yeison Álvarez | Proyecto TronScan Monitoring
+-- SCRIPT DE CREACIÓN PROCEDIMIENTO REFRESH_WALLET_METRICS, 
+-- CREACIÓN DE LA TASK REFRESH_WALLET_METRICS
+-- Proyecto: TronScan Monitoring Pipeline
+-- Autor: Yeison Alvarez Balvin
+-- Fecha: 2025-10-06
 -- ===============================================================
-
 USE ROLE ACCOUNTADMIN;
 USE WAREHOUSE COMPUTE_TRON_WH;
 USE DATABASE TRON_SCAN_MONITORING;

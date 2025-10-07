@@ -1,8 +1,8 @@
 -- ===============================================================
 -- SCRIPT DE VALIDACIÓN COMPLETA DE TASKS Y ETL EN SNOWFLAKE
 -- Proyecto: TronScan Monitoring Pipeline
--- Autor: Yeison Álvarez
--- Fecha: 2025-10-05
+-- Autor: Yeison Alvarez Balvin
+-- Fecha: 2025-10-06
 -- ===============================================================
 
 -- Establecer el contexto correcto

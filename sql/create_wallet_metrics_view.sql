@@ -1,7 +1,8 @@
 -- ===============================================================
--- VISTA DE MÉTRICAS: WALLET_METRICS_VIEW
--- Descripción: Resume la actividad de cada wallet monitoreada
--- Autor: Yeison Álvarez
+-- SCRIPT DE CREACIÓN DE LA TASK CHECK_WALLET_RULES_TASK
+-- Proyecto: TronScan Monitoring Pipeline
+-- Autor: Yeison Alvarez Balvin
+-- Fecha: 2025-10-06
 -- ===============================================================
 
 USE ROLE ACCOUNTADMIN;

@@ -58,10 +58,6 @@ def parse_transaction(raw_tx: Dict, observed_wallet: str) -> Transaction:
         else:
             amount_val = Decimal(0)
 
-
-
-
-
     return Transaction(
         transaction_id=transaction_id,
         timestamp=timestamp,

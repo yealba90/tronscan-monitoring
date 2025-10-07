@@ -1,7 +1,8 @@
 -- ===============================================================
--- TASK DE ALERTA: ALERT_TASK_FAILURES
--- Descripción: Detecta fallos en tasks y los registra en tabla de logs
--- Autor: Yeison Álvarez
+-- SCRIPT DE CREACIÓN DE LA TASK Y TABLA DE LOGS
+-- Proyecto: TronScan Monitoring Pipeline
+-- Autor: Yeison Alvarez Balvin
+-- Fecha: 2025-10-06
 -- ===============================================================
 
 USE ROLE ACCOUNTADMIN;

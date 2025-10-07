@@ -11,6 +11,7 @@ from src.extract.raw_saver import save_raw
 from src.transform.transformer import parse_transaction
 from src.transform.save_structured import save_structured
 from src.load.snowflake_loader import SnowflakeLoader
+from src.anomaly.anomaly_detector import detect_anomalies
 
 # ========================================
 # CONFIGURACIÓN GLOBAL DE LOGS
@@ -43,7 +44,7 @@ logger.addHandler(console_handler)
 
 def etl_job():
     """Ejecuta el ciclo completo ETL: extracción, transformación y carga."""
-    logging.info("=== 🚀 Iniciando ciclo ETL TronScan ===")
+    logging.info("=== Iniciando ciclo ETL TronScan ===")
     start_time = datetime.utcnow()
 
     try:
@@ -52,16 +53,16 @@ def etl_job():
         wallets = load_wallets()
 
         for wallet in wallets:
-            logger.info(f"📥 Iniciando extracción de transacciones para wallet {wallet}")
+            logger.info(f"Iniciando extracción de transacciones para wallet {wallet}")
             txs = client.get_transactions(wallet)
 
             if not txs:
-                logging.warning(f"⚠️ No se encontraron transacciones para {wallet}")
+                logging.warning(f"No se encontraron transacciones para {wallet}")
                 continue
 
             # Guardar datos crudos
             raw_path = save_raw(wallet, txs)
-            logger.info(f"💾 Datos crudos guardados en: {raw_path}")
+            logger.info(f"Datos crudos guardados en: {raw_path}")
 
             # Transformar datos
             structured = []
@@ -69,32 +70,36 @@ def etl_job():
                 try:
                     structured.append(parse_transaction(tx, wallet))
                 except Exception as e:
-                    logger.error(f"❌ Error al parsear transacción en {wallet}: {e}")
+                    logger.error(f"Error al parsear transacción en {wallet}: {e}")
 
             # Guardar estructurados
             structured_path = save_structured(wallet, structured)
-            logger.info(f"📄 Datos estructurados guardados en: {structured_path}")
+            logger.info(f"Datos estructurados guardados en: {structured_path}")
 
             # Cargar en Snowflake
             loader.insert_transactions(structured)
-            logger.info(f"⬆️ Datos cargados exitosamente en Snowflake para {wallet}")
+            logger.info(f"Datos cargados exitosamente en Snowflake para {wallet}")
 
         # Ejecutar task en Snowflake al final del ciclo
         loader.run_task("REFRESH_WALLET_METRICS")
 
         try:
+            detect_anomalies()
+            logger.info("Detección de anomalías completada.")
             export_alerts_to_json()
-            logger.info("📤 Alertas exportadas correctamente a archivo JSON.")
+            logger.info("Alertas exportadas correctamente a archivo JSON.")
+            detect_anomalies()
+            logger.info("Detección de anomalías completada.")
         except Exception as e:
-            logger.error(f"⚠️ Error al exportar alertas a JSON: {e}")
+            logger.error(f"Error al exportar alertas a JSON: {e}")
 
         elapsed = (datetime.utcnow() - start_time).total_seconds()
-        logger.info(f"✅ ETL completado correctamente en {elapsed:.2f} segundos.\n")
+        logger.info(f"ETL completado correctamente en {elapsed:.2f} segundos.\n")
 
         loader.close()
 
     except Exception as e:
-        logger.error(f"❌ Error general en el ETL: {e}")
+        logger.error(f"Error general en el ETL: {e}")
         logger.info("Reintentando en el próximo ciclo...\n")
 
 
@@ -104,7 +109,7 @@ def etl_job():
 
 def main():
     """Ejecuta el ETL cada 15 minutos de forma continua."""
-    logger.info("🕒 Servicio ETL TronScan iniciado (ejecución cada 15 min)...")
+    logger.info("Servicio ETL TronScan iniciado (ejecución cada 15 min)...")
 
     # Ejecutar la primera vez al inicio
     etl_job()

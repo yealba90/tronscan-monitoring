@@ -1,9 +1,5 @@
 import os
-import json
 import logging
-from typing import List
-from pathlib import Path
-from src.transform.models import Transaction
 from dotenv import load_dotenv
 import snowflake.connector
 
@@ -65,18 +61,14 @@ class SnowflakeLoader:
             cur.execute(create_stmt)
         self.conn.commit()
 
-
-    # =====================================================
-    # INSERCIÓN / MERGE DE TRANSACCIONES SERIALIZADAS
-    # =====================================================
     def insert_transactions(self, transactions):
         """
         Inserta o actualiza transacciones en Snowflake sin duplicar.
         Convierte todos los valores a tipos básicos antes de ejecutar.
         """
         if not transactions:
-            logging.info("⚠️ No se recibieron transacciones para insertar.")
-            print("⚠️ No se recibieron transacciones para insertar.")
+            logging.info("No se recibieron transacciones para insertar.")
+            print("No se recibieron transacciones para insertar.")
             return
 
         merge_stmt = """
@@ -126,13 +118,9 @@ class SnowflakeLoader:
                     print(f"Error al insertar transacción {tx.transaction_id}: {e}")
 
         self.conn.commit()
-        logging.info(f"✅ {inserted} transacciones procesadas (MERGE completado).")
-        print(f"✅ {inserted} transacciones procesadas (MERGE completado).")
+        logging.info(f"{inserted} transacciones procesadas (MERGE completado).")
+        print(f"{inserted} transacciones procesadas (MERGE completado).")
 
-
-    # =====================================================
-    # EJECUTAR TASK DE SNOWFLAKE
-    # =====================================================
     def run_task(self, task_name):
         """
         Ejecuta una Task existente en Snowflake (por ejemplo: REFRESH_WALLET_METRICS).
